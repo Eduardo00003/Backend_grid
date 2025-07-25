@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+  # what services do i want and imajes
+    image: postgis/postgis:15-3.3
+    container_name: grid_postgres
+    # local machine : inside the container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: griduser
+      POSTGRES_PASSWORD: gridpass
+      POSTGRES_DB: grid_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
