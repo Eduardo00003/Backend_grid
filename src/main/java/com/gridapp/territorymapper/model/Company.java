@@ -1,4 +1,4 @@
-package com.gridapp.territory_mapper.model;
+package com.gridapp.territorymapper.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,18 +12,29 @@ import lombok.*;
 @AllArgsConstructor //Adds a constructor with all fields
 @Builder //Allows you to use the builder pattern
 
-public class company {
+public class Company {
   // this is the primary key and it is generating a number to store it
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String companyName;
     private String name;
+
     private String address;
     private String city;
     private String state;
+    private String postalCode;
+    private String county;
+    private String phone;
+    // Stores the number RID from the csv
+    @Column(name = "external_id")
+    private Long externalId;
+
+    @Column(columnDefinition = "geometry(Point,4326)")
+    private String location;
+    
+
+
 
 
 

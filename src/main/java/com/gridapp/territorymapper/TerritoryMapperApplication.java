@@ -1,4 +1,4 @@
-package com.gridapp.territory_mapper;
+package com.gridapp.territorymapper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
